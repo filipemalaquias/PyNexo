@@ -1,87 +1,115 @@
+/* =========================================================
+   PyNexo — Cores do logótipo Python
+   Azul:    #3776AB  (primária)
+   Amarelo: #FFD43B  (acento)
+   ========================================================= */
 
-/* PyNexo - Barra de navegação superior */
-.md-header__topic {
-    display: none !important;
+/* ---------- Variáveis do tema: MODO CLARO ---------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #3776AB;
+  --md-primary-fg-color--light: #5B9BD5;
+  --md-primary-fg-color--dark:  #2A5A8A;
+
+  --md-accent-fg-color:         #FFD43B;
+  --md-accent-fg-color--light:  #FFE580;
+  --md-accent-fg-color--dark:   #E6B800;
+
+  --pynexo-nav-bg:              #17212B;
+  --pynexo-nav-link:            #E5E7EB;
+  --pynexo-nav-link-hover:      #FFD43B;
 }
 
-/* Cabeçalho principal: azul Python */
+/* ---------- Variáveis do tema: MODO ESCURO ---------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #3776AB;
+  --md-primary-fg-color--light: #5B9BD5;
+  --md-primary-fg-color--dark:  #2A5A8A;
+
+  --md-accent-fg-color:         #FFD43B;
+  --md-accent-fg-color--light:  #FFE580;
+  --md-accent-fg-color--dark:   #E6B800;
+
+  --md-hue: 210; /* aproxima o tom base do slate ao azul */
+
+  --pynexo-nav-bg:              #0F1720;
+  --pynexo-nav-link:            #E5E7EB;
+  --pynexo-nav-link-hover:      #FFD43B;
+}
+
+/* =========================================================
+   Cabeçalho principal
+   ========================================================= */
 .md-header {
-    background-color: #3776AB !important;
-    color: #FFFFFF;
+  background-color: var(--md-primary-fg-color) !important;
+  color: #FFFFFF;
 }
 
 .md-header__button,
 .md-header__topic,
 .md-header__source,
 .md-header__title {
-    color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
 .md-header__button:hover {
-    color: #DCEBFA !important;
+  color: #DCEBFA !important;
 }
 
-/* Barra personalizada dos links: azul escuro */
+/* Esconde o título textual no cabeçalho (o logo já identifica) */
+.md-header__topic {
+  display: none !important;
+}
+
+/* =========================================================
+   Barra de navegação superior personalizada
+   ========================================================= */
 .pynexo-top-links {
-    background-color: #17212B !important;
-    border-top: 1px solid rgba(255,255,255,.08);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.pynexo-top-links__container a {
-    color: #FFFFFF !important;
-}
-
-.pynexo-top-links__container a:hover {
-    color: #FFD166 !important;
-}
-
-.pynexo-top-links {
-    background: #17212b;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    width: 100%;
+  background: var(--pynexo-nav-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
 }
 
 .pynexo-top-links__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    min-height: 48px;
-    overflow-x: auto;
-    scrollbar-width: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 48px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .pynexo-top-links__container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .pynexo-top-links__container a {
-    color: #e5e7eb;
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.2s ease;
+  color: var(--pynexo-nav-link);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .pynexo-top-links__container a:hover {
-    color: #f0b84b;
+  color: var(--pynexo-nav-link-hover);
 }
 
-/* Adaptação para telemóveis */
-
+/* =========================================================
+   Adaptação para telemóveis
+   ========================================================= */
 @media screen and (max-width: 768px) {
-    .pynexo-top-links__container {
-        gap: 22px;
-        padding: 0 16px;
-        min-height: 44px;
-    }
+  .pynexo-top-links__container {
+    gap: 22px;
+    padding: 0 16px;
+    min-height: 44px;
+  }
 
-    .pynexo-top-links__container a {
-        font-size: 12px;
-    }
+  .pynexo-top-links__container a {
+    font-size: 12px;
+  }
 }
